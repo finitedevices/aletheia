@@ -13343,28 +13343,6 @@
 			)
 		)
 	)
-	(global_label "KB_SWB"
-		(shape output)
-		(at 95.25 39.37 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "28e13e21-f7c9-493f-9b5d-f3420d032888")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 105.6737 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "CLOCK"
 		(shape input)
 		(at 234.95 144.78 0)
@@ -13653,24 +13631,24 @@
 			)
 		)
 	)
-	(global_label "KB_SWA"
+	(global_label "KB_SWB"
 		(shape output)
-		(at 95.25 36.83 0)
+		(at 80.01 39.37 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "6748b081-dad3-45fc-99ab-ee3807c2b259")
+		(uuid "6751b95a-e0c6-44b4-af1e-540096421436")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 105.4923 36.83 0)
+			(at 69.5863 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -13873,28 +13851,6 @@
 			)
 		)
 	)
-	(global_label "~{RESET}"
-		(shape input)
-		(at 234.95 121.92 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a65ffa77-73e3-4d67-8cef-af63e2181208")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 243.6803 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "KB_SCK"
 		(shape output)
 		(at 214.63 144.78 180)
@@ -13952,6 +13908,28 @@
 		(uuid "b9c08b5b-026f-4624-8c08-971e60000072")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 83.82 163.0656 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "KB_SWA"
+		(shape output)
+		(at 80.01 36.83 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c85cf126-a2f5-4bb4-b7f7-cb7c956c2763")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 69.7677 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15337,7 +15315,8 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 80.01 39.37 270)
+		(at 95.25 39.37 90)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15346,7 +15325,7 @@
 		(fields_autoplaced yes)
 		(uuid "3843be5d-1148-4e7b-9295-b131696937f0")
 		(property "Reference" "#PWR0139"
-			(at 73.66 39.37 0)
+			(at 101.6 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15355,7 +15334,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 76.2 39.3699 90)
+			(at 99.06 39.3699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15364,7 +15343,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 80.01 39.37 0)
+			(at 95.25 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15373,7 +15352,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 80.01 39.37 0)
+			(at 95.25 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15382,7 +15361,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 80.01 39.37 0)
+			(at 95.25 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15394,7 +15373,7 @@
 			(uuid "eae2847e-f16f-4569-9885-8884248f180e")
 		)
 		(instances
-			(project ""
+			(project "FCom-8"
 				(path "/d870bcaf-2f1b-46ce-b0b4-300d405a54b8"
 					(reference "#PWR0139")
 					(unit 1)
@@ -19285,7 +19264,8 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 80.01 36.83 270)
+		(at 95.25 36.83 90)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -19294,7 +19274,7 @@
 		(fields_autoplaced yes)
 		(uuid "b7348166-1d9d-4b43-81b8-a2050f486e68")
 		(property "Reference" "#PWR0138"
-			(at 73.66 36.83 0)
+			(at 101.6 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19303,7 +19283,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 76.2 36.8299 90)
+			(at 99.06 36.8299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19312,7 +19292,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 80.01 36.83 0)
+			(at 95.25 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19321,7 +19301,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 80.01 36.83 0)
+			(at 95.25 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19330,7 +19310,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 80.01 36.83 0)
+			(at 95.25 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19342,7 +19322,7 @@
 			(uuid "2e1e3024-3598-4f85-8542-11c83bdc4db9")
 		)
 		(instances
-			(project ""
+			(project "FCom-8"
 				(path "/d870bcaf-2f1b-46ce-b0b4-300d405a54b8"
 					(reference "#PWR0138")
 					(unit 1)
@@ -20348,6 +20328,73 @@
 			(project ""
 				(path "/d870bcaf-2f1b-46ce-b0b4-300d405a54b8"
 					(reference "Y101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 234.95 121.92 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "df3680dd-cec4-428f-bee1-5624aa097151")
+		(property "Reference" "#PWR0145"
+			(at 231.14 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VCC"
+			(at 238.76 121.9199 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 234.95 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 234.95 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 234.95 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "293f601e-c75c-4175-a427-4fb5b2f0fcab")
+		)
+		(instances
+			(project "FCom-8"
+				(path "/d870bcaf-2f1b-46ce-b0b4-300d405a54b8"
+					(reference "#PWR0145")
 					(unit 1)
 				)
 			)
