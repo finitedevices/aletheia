@@ -1112,7 +1112,10 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Regulator_Linear:LM1117T-5.0"
+		(symbol "Regulator_Linear:LF50_TO220"
+			(pin_names
+				(offset 0.254)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1124,7 +1127,7 @@
 					)
 				)
 			)
-			(property "Value" "LM1117T-5.0"
+			(property "Value" "LF50_TO220"
 				(at 0 3.175 0)
 				(effects
 					(font
@@ -1133,7 +1136,26 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Horizontal_TabDown"
+			(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
+				(at 0 5.715 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.st.com/content/ccc/resource/technical/document/datasheet/c4/0e/7e/2a/be/bc/4c/bd/CD00000546.pdf/files/CD00000546.pdf/jcr:content/translations/en.CD00000546.pdf"
+				(at 0 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Low-drop Voltage Regulator, Io up to 500mA, Fixed Vo 5.0V, TO-220"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1142,25 +1164,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm1117.pdf"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "800mA Low-Dropout Linear Regulator, 5.0V fixed output, TO-220"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "linear regulator ldo fixed positive"
+			(property "ki_keywords" "LDO regulator voltage"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1178,10 +1182,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "LM1117T-5.0_0_1"
+			(symbol "LF50_TO220_0_1"
 				(rectangle
-					(start -5.08 -5.08)
-					(end 5.08 1.905)
+					(start -5.08 1.905)
+					(end 5.08 -5.08)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -1191,7 +1195,7 @@
 					)
 				)
 			)
-			(symbol "LM1117T-5.0_1_1"
+			(symbol "LF50_TO220_1_1"
 				(pin power_in line
 					(at -7.62 0 0)
 					(length 2.54)
@@ -1202,7 +1206,7 @@
 							)
 						)
 					)
-					(number "3"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1220,7 +1224,7 @@
 							)
 						)
 					)
-					(number "1"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1238,7 +1242,7 @@
 							)
 						)
 					)
-					(number "2"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1512,7 +1516,7 @@
 		)
 		(uuid "4b1e3542-5490-492a-ae34-6ce0b685aaad")
 	)
-	(text "2× Schottky diodes to cause\ndouble voltage drop, and ensure\nUSB-C power takes priority"
+	(text "Select battery diode with higher\nV_{f} than USB-C diode\n(max 0.25 V at 100 mA)"
 		(exclude_from_sim no)
 		(at 196.85 87.376 0)
 		(effects
@@ -1654,7 +1658,7 @@
 		(uuid "f0b53beb-c2e7-4e92-9eed-993d553552f1")
 	)
 	(junction
-		(at 201.93 71.12)
+		(at 190.5 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fef942af-da30-4d25-bb5f-8a5b87d2a51f")
@@ -1795,16 +1799,6 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 80.01) (xy 191.77 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "55f72239-d7fa-466a-92e6-11af2f965d2c")
-	)
-	(wire
-		(pts
 			(xy 139.7 60.96) (xy 166.37 60.96)
 		)
 		(stroke
@@ -1815,7 +1809,7 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 60.96) (xy 201.93 71.12)
+			(xy 190.5 60.96) (xy 190.5 71.12)
 		)
 		(stroke
 			(width 0)
@@ -1835,7 +1829,7 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 60.96) (xy 201.93 60.96)
+			(xy 187.96 60.96) (xy 190.5 60.96)
 		)
 		(stroke
 			(width 0)
@@ -1865,7 +1859,7 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 71.12) (xy 204.47 71.12)
+			(xy 190.5 71.12) (xy 193.04 71.12)
 		)
 		(stroke
 			(width 0)
@@ -1885,7 +1879,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 80.01) (xy 179.07 80.01)
+			(xy 166.37 80.01) (xy 180.34 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1895,7 +1889,7 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 71.12) (xy 201.93 80.01)
+			(xy 190.5 71.12) (xy 190.5 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1905,7 +1899,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 60.96) (xy 191.77 60.96)
+			(xy 166.37 60.96) (xy 180.34 60.96)
 		)
 		(stroke
 			(width 0)
@@ -1945,7 +1939,7 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 80.01) (xy 199.39 80.01)
+			(xy 190.5 80.01) (xy 187.96 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2730,7 +2724,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm"
+		(property "Footprint" "Capacitor_THT:C_Radial_D4.0mm_H5.0mm_P1.50mm"
 			(at 77.1652 143.51 0)
 			(effects
 				(font
@@ -2840,7 +2834,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Schottky")
-		(at 195.58 60.96 180)
+		(at 184.15 60.96 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2849,7 +2843,7 @@
 		(fields_autoplaced yes)
 		(uuid "51d1a5f5-ce7b-4da7-b206-f44193fdf451")
 		(property "Reference" "D201"
-			(at 195.8975 54.61 0)
+			(at 184.4675 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2857,7 +2851,7 @@
 			)
 		)
 		(property "Value" "D_Schottky"
-			(at 195.8975 57.15 0)
+			(at 184.4675 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2865,7 +2859,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal"
-			(at 195.58 60.96 0)
+			(at 184.15 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2874,7 +2868,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 195.58 60.96 0)
+			(at 184.15 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2883,7 +2877,7 @@
 			)
 		)
 		(property "Description" "Schottky diode"
-			(at 195.58 60.96 0)
+			(at 184.15 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3039,76 +3033,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky")
-		(at 195.58 80.01 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5b4f4fe2-81be-4f52-88b4-366865948f76")
-		(property "Reference" "D203"
-			(at 195.8975 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "D_Schottky"
-			(at 195.8975 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal"
-			(at 195.58 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 195.58 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Schottky diode"
-			(at 195.58 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "a83938d3-40c5-4c28-a4b4-fbd4a2a1aaf1")
-		)
-		(pin "1"
-			(uuid "fb7c2e3a-0b89-4830-b3fe-6e0bf8b84fa2")
-		)
-		(instances
-			(project "FCom-8"
-				(path "/d870bcaf-2f1b-46ce-b0b4-300d405a54b8/5b699d3c-84a6-4a70-ac7d-020a173c82b3"
-					(reference "D203")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
-		(at 204.47 71.12 270)
+		(at 193.04 71.12 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3117,7 +3043,7 @@
 		(fields_autoplaced yes)
 		(uuid "5ccc2416-821a-41a5-a0eb-f3fe44d3334b")
 		(property "Reference" "#PWR0204"
-			(at 200.66 71.12 0)
+			(at 189.23 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3126,7 +3052,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 208.28 71.1199 90)
+			(at 196.85 71.1199 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3135,7 +3061,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 204.47 71.12 0)
+			(at 193.04 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3144,7 +3070,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 204.47 71.12 0)
+			(at 193.04 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3153,7 +3079,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 204.47 71.12 0)
+			(at 193.04 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3201,7 +3127,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm"
+		(property "Footprint" "Capacitor_THT:C_Radial_D4.0mm_H5.0mm_P1.50mm"
 			(at 204.1652 143.51 0)
 			(effects
 				(font
@@ -3341,7 +3267,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm"
+		(property "Footprint" "Capacitor_THT:C_Radial_D4.0mm_H5.0mm_P1.50mm"
 			(at 102.5652 143.51 0)
 			(effects
 				(font
@@ -3411,7 +3337,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm"
+		(property "Footprint" "Capacitor_THT:C_Radial_D4.0mm_H5.0mm_P1.50mm"
 			(at 230.8352 143.51 0)
 			(effects
 				(font
@@ -3994,77 +3920,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Regulator_Linear:LM1117T-5.0")
-		(at 156.21 80.01 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a0fa8afb-db69-4842-9673-78429ab624f2")
-		(property "Reference" "U201"
-			(at 156.21 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LM1117T-5.0"
-			(at 156.21 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Horizontal_TabDown"
-			(at 156.21 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm1117.pdf"
-			(at 156.21 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "800mA Low-Dropout Linear Regulator, 5.0V fixed output, TO-220"
-			(at 156.21 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "4a508cfd-a843-4409-bf38-943a3391bac9")
-		)
-		(pin "1"
-			(uuid "471f56a2-a57b-4eb8-a3f3-a51307c02131")
-		)
-		(pin "3"
-			(uuid "7701acf0-cc5c-4f50-8f66-e7c8cd6f2b7b")
-		)
-		(instances
-			(project ""
-				(path "/d870bcaf-2f1b-46ce-b0b4-300d405a54b8/5b699d3c-84a6-4a70-ac7d-020a173c82b3"
-					(reference "U201")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 152.4 139.7 0)
 		(unit 1)
@@ -4092,7 +3947,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm"
+		(property "Footprint" "Capacitor_THT:C_Radial_D4.0mm_H5.0mm_P1.50mm"
 			(at 153.3652 143.51 0)
 			(effects
 				(font
@@ -4153,7 +4008,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "39k"
 			(at 125.73 100.3299 0)
 			(effects
 				(font
@@ -4272,7 +4127,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Schottky")
-		(at 182.88 80.01 180)
+		(at 184.15 80.01 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4281,7 +4136,7 @@
 		(fields_autoplaced yes)
 		(uuid "bcc3d6a9-df63-464d-93cc-082f9625883b")
 		(property "Reference" "D202"
-			(at 183.1975 73.66 0)
+			(at 184.4675 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4289,7 +4144,7 @@
 			)
 		)
 		(property "Value" "D_Schottky"
-			(at 183.1975 76.2 0)
+			(at 184.4675 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4297,7 +4152,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal"
-			(at 182.88 80.01 0)
+			(at 184.15 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4306,7 +4161,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 182.88 80.01 0)
+			(at 184.15 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4315,7 +4170,7 @@
 			)
 		)
 		(property "Description" "Schottky diode"
-			(at 182.88 80.01 0)
+			(at 184.15 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4502,7 +4357,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm"
+		(property "Footprint" "Capacitor_THT:C_Radial_D4.0mm_H5.0mm_P1.50mm"
 			(at 127.9652 143.51 0)
 			(effects
 				(font
@@ -4572,7 +4427,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm"
+		(property "Footprint" "Capacitor_THT:C_Radial_D4.0mm_H5.0mm_P1.50mm"
 			(at 167.3352 77.47 0)
 			(effects
 				(font
@@ -4642,7 +4497,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm"
+		(property "Footprint" "Capacitor_THT:C_Radial_D4.0mm_H5.0mm_P1.50mm"
 			(at 178.7652 143.51 0)
 			(effects
 				(font
@@ -4968,6 +4823,78 @@
 			(project "FCom-8"
 				(path "/d870bcaf-2f1b-46ce-b0b4-300d405a54b8/5b699d3c-84a6-4a70-ac7d-020a173c82b3"
 					(reference "C203")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Regulator_Linear:LF50_TO220")
+		(at 156.21 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ea0d7746-eaab-4560-b065-3b83482912e8")
+		(property "Reference" "U201"
+			(at 156.21 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LP2954AIT/NOPB"
+			(at 156.21 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
+			(at 156.21 74.295 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.st.com/content/ccc/resource/technical/document/datasheet/c4/0e/7e/2a/be/bc/4c/bd/CD00000546.pdf/files/CD00000546.pdf/jcr:content/translations/en.CD00000546.pdf"
+			(at 156.21 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Low-drop Voltage Regulator, Io up to 500mA, Fixed Vo 5.0V, TO-220"
+			(at 156.21 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e3d55eb6-b924-4219-a0a8-af1678058635")
+		)
+		(pin "1"
+			(uuid "cd5b1f51-0f85-4dc0-ae4d-97916cb88252")
+		)
+		(pin "3"
+			(uuid "2d84e9c5-21b5-43c2-8324-fc373234989d")
+		)
+		(instances
+			(project ""
+				(path "/d870bcaf-2f1b-46ce-b0b4-300d405a54b8/5b699d3c-84a6-4a70-ac7d-020a173c82b3"
+					(reference "U201")
 					(unit 1)
 				)
 			)

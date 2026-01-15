@@ -7445,7 +7445,7 @@
 	)
 	(text "Custom switch A"
 		(exclude_from_sim no)
-		(at 54.356 37.084 0)
+		(at 50.546 37.084 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7694,7 +7694,7 @@
 	)
 	(text "Backlight switch"
 		(exclude_from_sim no)
-		(at 54.356 34.544 0)
+		(at 50.546 34.544 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7707,7 +7707,7 @@
 	)
 	(text "RAM bank switch"
 		(exclude_from_sim no)
-		(at 54.356 32.004 0)
+		(at 50.546 32.004 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7756,7 +7756,7 @@
 	)
 	(text "Custom switch B"
 		(exclude_from_sim no)
-		(at 54.356 39.624 0)
+		(at 50.546 39.624 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -20133,7 +20133,7 @@
 				)
 			)
 		)
-		(property "Value" "Blue LED"
+		(property "Value" "Yellow LED"
 			(at 186.3725 125.73 0)
 			(effects
 				(font
