@@ -1,0 +1,3 @@
+[submodule "simulator/lib/vrEmu6502"]
+	path = simulator/lib/vrEmu6502
+	url = https://github.com/visrealm/vrEmu6502
