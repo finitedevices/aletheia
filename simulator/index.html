@@ -6,8 +6,42 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Aletheia Simulator</h1>
-        <div id="instances"></div>
+        <header>
+            <h1>Aletheia Simulator</h1>
+            <h2>⤭ Finite Devices</h2>
+        </header>
+        <main>
+            <section id="instances"></section>
+            <aside id="pane">
+                <div id="properties">
+                    <fieldset>
+                        <legend>Appearance</legend>
+                        <input type="checkbox" id="showInstance" checked>
+                        <label for="showInstance">Show this instance</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Assembler</legend>
+                        <textarea placeholder="Enter 6502 assembly code here"></textarea>
+                        <div>
+                            <button>Assemble</button>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Code loader</legend>
+                        <textarea placeholder="Enter hex bytes here"></textarea>
+                        <div>
+                            <input type="checkbox" id="loadCode">
+                            <label for="loadCode">Load code on next application</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <fieldset id="applyArea">
+                    <legend>Apply to instances</legend>
+                    <div id="applyInstances"></div>
+                    <button id="applyButton">Apply</button>
+                </fieldset>
+            </aside>
+        </main>
         <script src="build/aletheia.js"></script>
         <script src="script.js"></script>
     </body>
