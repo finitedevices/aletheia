@@ -1,8 +1,149 @@
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    padding: 0.5rem;
+    border-bottom: 2px solid black;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 1.125rem;
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+    min-height: 0;
+}
+
+fieldset:not(.instance *) {
+    border: 2px solid black;
+}
+
+button:not(.instance *) {
+    padding: 0.75rem;
+    padding-block: 0.5rem;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:not(.instance *) {
+    position: relative;
+    display: inline-block;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+    margin-block: 0.5rem;
+    background-color: white;
+    border: 2px solid black;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:not(.instance *) + label {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:not(.instance *):checked::before {
+    position: absolute;
+    top: -0.45rem;
+    bottom: 0;
+    left: -0.1rem;
+    right: 0;
+    font-size: 1.1rem;
+    content: "✔";
+}
+
+textarea {
+    width: 100%;
+    height: 5rem;
+    border: 2px solid black;
+    font-family: monospace;
+    white-space: nowrap;
+    resize: vertical;
+}
+
 .instance {
     position: relative;
     width: 94mm;
     height: 127mm;
-    background-color: #ff9933;
+    flex-shrink: 0;
+    background-color: #ee8822;
+}
+
+.instance::before {
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    color: #444444;
+    transform: translateX(-50%);
+    content: "Instance " attr(data-instanceid);
+}
+
+.display {
+    position: relative;
+    left: -2mm;
+    width: 98mm;
+    height: 60mm;
+    background-color: #336633;
+}
+
+.display::before {
+    position: absolute;
+    top: 10mm;
+    left: 1mm;
+    width: 96mm;
+    height: 39mm;
+    background-color: #222222;
+    border-radius: 2mm;
+    content: "";
+}
+
+.display::after {
+    position: absolute;
+    top: 17mm;
+    left: 11mm;
+    width: 77mm;
+    height: 25mm;
+    background-color: #1111aa;
+    border-radius: 1mm;
+    content: "";
+}
+
+.instance[data-mode="cpuRun"] .display::after {
+    background-color: #3333ff;
+}
+
+.display canvas {
+    position: absolute;
+    top: 19mm;
+    left: 14mm;
+    width: 71mm;
+    height: 21mm;
+    z-index: 1;
 }
 
 .dips {
@@ -49,6 +190,7 @@
     margin-inline: 0.75mm;
     appearance: none;
     background-color: grey;
+    cursor: pointer;
 }
 
 .dips input::before {
@@ -150,6 +292,7 @@
     height: 100%;
     margin: 0;
     appearance: none;
+    cursor: pointer;
 }
 
 .led {
@@ -190,4 +333,67 @@
 
 .led.custom.on {
     background-color: #ffcc00;
+}
+
+#instances {
+    display: flex;
+    padding-inline: 5rem;
+    gap: 5rem;
+    flex-grow: 1;
+    flex-basis: 0;
+    justify-content: safe center;
+    align-items: center;
+    overflow: auto;
+}
+
+#pane {
+    display: flex;
+    width: 25rem;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    flex-direction: column;
+    overflow: auto;
+}
+
+#properties {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1;
+}
+
+#applyArea {
+    display: flex;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    border-block-start: 2px solid black;
+}
+
+#applyInstances {
+    display: flex;
+    gap: 0.5rem;
+    flex-grow: 1;
+}
+
+#applyInstances > * {
+    position: relative;
+    display: block;
+    flex-grow: 1;
+    border: 2px solid black;
+}
+
+#applyInstances input {
+    margin: 0.5rem;
+    z-index: 1;
+}
+
+#applyInstances label {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.3rem;
+    padding-inline-start: 2rem;
 }
