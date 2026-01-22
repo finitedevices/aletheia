@@ -1,3 +1,5 @@
+import * as codeLoader from "./codeloader.js";
+
 const SYSTEM_DIPS = [
     {name: "RAM bank", class: "ramBank"},
     {name: "Backlight", class: "backlight"},
@@ -180,56 +182,42 @@ class Instance {
     }
 }
 
-var loadCode = Module.cwrap("load_code", null, ["number", "number", "number", "number"]);
-
 function applyProperties(id) {
     var instance = document.getElementById(`instance${id}`);
 
     instance.hidden = !document.querySelector("#showInstance").checked;
 
     if (document.querySelector("#loadCode").checked) {
-        var bytes = new Uint8Array(document.querySelector("#codeInput").value.match(/[0-9a-fA-F][0-9a-fA-F]\s*/g).map((value) => parseInt(value, 16)));
-
-        var buffer = Module._malloc(bytes.length);
-
-        Module.HEAPU8.set(bytes, buffer);
-
-        loadCode(id, buffer, 0xFF00, bytes.length);
-
-        Module._free(buffer);
+        codeLoader.parseAndLoadCode(id, document.querySelector("#codeInput").value);
     }
 }
 
-function renderLcdBitmap(id, buffer) {
+window.renderLcdBitmap = function(id, buffer) {
     instances.find((instance) => instance.id == id)?.renderLcdBitmap(buffer);
 }
+    
+Module.setup();
 
-Module.onRuntimeInitialized = function() {
-    console.log("Runtime initialised");
-    
-    Module.setup();
-    
+for (var i = 0; i < INSTANCES; i++) {
+    instances.push(new Instance(i));
+}
+
+document.querySelector("#codeInput").addEventListener("input", function() {
+    document.querySelector("#loadCode").checked = true;
+});
+
+document.querySelector("#applyButton").addEventListener("click", function() {
     for (var i = 0; i < INSTANCES; i++) {
-        instances.push(new Instance(i));
-    }
-    
-    document.querySelector("#codeInput").addEventListener("input", function() {
-        document.querySelector("#loadCode").checked = true;
-    });
-    
-    document.querySelector("#applyButton").addEventListener("click", function() {
-        for (var i = 0; i < INSTANCES; i++) {
-            if (document.getElementById(`applyInstance${i}`).checked) {
-                applyProperties(i);
-            }
+        if (document.getElementById(`applyInstance${i}`).checked) {
+            applyProperties(i);
         }
+    }
 
-        document.querySelector("#loadCode").checked = false;
-    });
+    document.querySelector("#loadCode").checked = false;
+});
 
-    requestAnimationFrame(function render() {
-        Module.loop();
+requestAnimationFrame(function render() {
+    Module.loop();
 
-        requestAnimationFrame(render);
-    });
-};
+    requestAnimationFrame(render);
+});
