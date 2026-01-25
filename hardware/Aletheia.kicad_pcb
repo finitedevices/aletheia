@@ -32566,20 +32566,20 @@
 		(uuid "2a557388-c4e8-4c81-b362-3a2b259b2885")
 	)
 	(segment
-		(start 111.76 27.94)
-		(end 111.76 45.72)
-		(width 1.5)
-		(layer "B.Cu")
-		(net 1)
-		(uuid "2b2bdccc-c9b3-4f9f-a36f-9b77c6cf5c22")
-	)
-	(segment
 		(start 119.38 53.34)
 		(end 119.38 50.8)
 		(width 1.5)
 		(layer "B.Cu")
 		(net 1)
 		(uuid "2bb380a1-a368-4012-a880-3ce88315afcb")
+	)
+	(segment
+		(start 111.76 27.94)
+		(end 111.76 50.8)
+		(width 1.5)
+		(layer "B.Cu")
+		(net 1)
+		(uuid "2e7ef556-32fb-4489-bdad-86eb1269bc4e")
 	)
 	(segment
 		(start 119.38 60.96)
