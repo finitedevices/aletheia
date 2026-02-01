@@ -1,0 +1,143 @@
+body {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: "Arimo", sans-serif;
+}
+
+h1 {
+    border-bottom: 0.2rem solid black;
+    string-set: section content();
+}
+
+a {
+    color: black;
+}
+
+.contents {
+    padding: 0;
+}
+
+.contents li {
+    list-style: none;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.safetyNotice {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 0.1rem solid black;
+}
+
+.safetyNotice h2 {
+    position: relative;
+    margin: 0;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 3rem;
+    font-size: 1.2rem;
+}
+
+.safetyNotice h2:before {
+    position: absolute;
+    top: 0;
+    left: 0.25rem;
+    font-size: 2.5rem;
+    font-weight: normal;
+    content: "⚠";
+}
+
+.safetyNotice h2 strong {
+    text-transform: uppercase;
+}
+
+.safetyNotice ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+@page {
+    size: A4;
+    margin-top: 0;
+    margin-bottom: 4rem;
+    border-bottom: 0.1rem solid black;
+}
+
+@page:left {
+    margin-left: 1cm;
+    margin-right: 2cm;
+
+    @bottom-left {
+        font-family: "Arimo", sans-serif;
+        content: counter(page);
+    }
+
+    @bottom-right {
+        font-family: "Arimo", sans-serif;
+        content: "Aletheia Operator's Manual";
+    }
+}
+
+@page:right {
+    margin-left: 2cm;
+    margin-right: 1cm;
+
+    @bottom-left {
+        font-family: "Arimo", sans-serif;
+        content: string(section);
+    }
+
+    @bottom-right {
+        font-family: "Arimo", sans-serif;
+        content: counter(page);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media print {
+    body {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    h1 {
+        margin-top: 1cm;
+        break-before: page;
+    }
+
+    a.ref {
+        text-decoration: none;
+    }
+
+    a.ref::after {
+        content: " (see page " target-counter(attr(href), page) ")";
+    }
+
+    .break {
+        break-before: page;
+    }
+
+    .contents a {
+        text-decoration: none;
+    }
+
+    .contents a::after {
+        content: " " leader(".") target-counter(attr(href), page);
+    }
+}
