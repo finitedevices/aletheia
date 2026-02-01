@@ -5,16 +5,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
         <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
     </head>
     <body>
         <h1>Aletheia Operator's Manual</h1>
         <div class="break"></div>
-        <h1>Table of contents</h1>
+        <h1 class="hideWithSidebar">Table of contents</h1>
         <ul class="contents">
-            <li><a href="#generalSafetyNotices">General safety notices</a></li>
-            <li><a href="#safeBatteryReplacementProcess">Safe battery replacement process</a></li>
+            <li><a href="#general-safety-notices">General safety notices</a></li>
+            <li><a href="#safe-battery-replacement-process">Safe battery replacement process</a></li>
+            <li><a href="#compliance-information">Compliance information</a></li>
         </ul>
-        <h1 id="generalSafetyNotices">General safety notices</h1>
+        <h1 id="general-safety-notices">General safety notices</h1>
         <div class="safetyNotice">
             <h2><strong>Warning!</strong> Risk of fire or serious personal injury!</h2>
             <ul>
@@ -33,7 +35,7 @@
                 <li>Do not drop the Aletheia as this could cause significant damage to its circuit board or exposed components.</li>
                 <li>Do not place heavy items on top of the Aletheia as those items could scratch or damage its components.</li>
                 <li>Ensure that the Aletheia is sufficiently protected when storing it in bags or containers. Wrapping the Aletheia in non-conductive protective materials (such as bubble wrap) can help to avoid damage during transport.</li>
-                <li>Do not use the Aletheia in temperatures cooler than 0&nbsp;&deg;C (32&nbsp;&deg;F) or warmer than 70&nbsp;&deg;C (158&nbsp;&deg;F).</li>
+                <li>Do not use the Aletheia in temperatures above 70&nbsp;&deg;C (158&nbsp;&deg;F) or below 0&nbsp;&deg;C (32&nbsp;&deg;F).</li>
                 <li>While the Aletheia has protections against connecting the battery terminals in the reverse polarity, ensure that terminals are connected in the correct polarity to minimise the risk of component damage.</li>
             </ul>
         </div>
@@ -41,12 +43,12 @@
             <h2><strong>Caution!</strong> Risk of losing data stored in the Aletheia's memory</h2>
             <ul>
                 <li>To prevent data loss, ensure that any data stored on the Aletheia is backed up.</li>
-                <li>Do not remove the battery unless absolutely necessary or as part of performing the <a href="#safeBatteryReplacementProcess" class="ref">safe battery replacement process</a>.</li>
+                <li>Do not remove the battery unless absolutely necessary or as part of performing the <a href="#safe-battery-replacement-process" class="ref">safe battery replacement process</a>.</li>
                 <li>When the connected battery is low on charge, ensure that it is replaced at the earliest convenience using the safe battery replacement process.</li>
                 <li>Do not flip the RAM bank switch while the mode select switch is in the CPU RUN mode.</li>
             </ul>
         </div>
-        <h1 id="safeBatteryReplacementProcess">Safe battery replacement process</h1>
+        <h1 id="safe-battery-replacement-process">Safe battery replacement process</h1>
         <p>All data is stored on the Aletheia's random access memory (RAM). This memory is volatile, which means that all data stored on it is cleared when the Aletheia is completely depowered. When replacing the Aletheia's battery, care must be taken to ensure that the Aletheia still receives a stable source of power to prevent the contents of RAM from being cleared.</p>
         <p>The following battery replacement process significantly reduces the risk of data loss occuring when performing a battery replacement. Finite Devices advises those replacing the Aletheia's battery to make a backup of the data stored on the Aletheia prior to battery replacement, if possible.</p>
         <ol>
@@ -58,5 +60,18 @@
             <li>Disconnect the 5&nbsp;V power source and USB-C cable. Ensure that the new battery remains connected.</li>
             <li>Verify that the Aletheia continues to work as intended by putting the mode select switch into the CPU run mode.</li>
         </ol>
+        <h1 id="compliance-information">Compliance information</h1>
+        <div class="complianceIcons">
+            <img src="media/leadfree.svg" title="Lead free" alt="Lead free">
+            <img src="media/weee.svg" title="WEEE compliant" alt="WEEE compliant">
+        </div>
+        <h2>United Kingdom; European Union</h2>
+        <p>In line with all electronics subject to WEEE regulations, the Aletheia should not be disposed of in household waste within the European Union.</p>
+        <p>RoHS 2 (Directive 2011/65/EU) has restrictions on the use of the following hazardous substances in electronics products: lead, mercury, cadmium, hexavalent chromium, polybrominated biphenyls (PBB), and polybrominated diphenyl ethers (PBDE). RoHS 3 (Directive 2015/863/EU) includes additional hazardous substances: Bis(2-ethylhexyl) phthalate (DEHP), Dibutyl phthalate (DBP), Butyl benzyl phthalate (BBP), and Diisobutyl phthalate (DIBP). The maximum allowed concentration (by weight) for hazardous substances is 0.1%, save for cadmium, at 0.01%. Finite Devices hereby declares that the Aletheia does not utilise any of the listed hazardous substances during manufacturing.</p>
+        <h2>United States of America</h2>
+        <div class="note">
+            <h3>PROTOTYPE — NOT FOR SALE</h3>
+            <p>This device has not been authorized as required by the rules of the Federal Communications Commission. This device is not, and may not be, offered for sale or lease, or sold or leased, until authorization is obtained.</p>
+        </div>
     </body>
 </html>

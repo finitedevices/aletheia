@@ -1,8 +1,6 @@
 body {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    margin-left: 20%;
-    margin-right: 20%;
     font-family: "Arimo", sans-serif;
 }
 
@@ -23,6 +21,12 @@ a {
     list-style: none;
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
+}
+
+.note {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 0.1rem solid black;   
 }
 
 .safetyNotice {
@@ -57,6 +61,15 @@ a {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     padding-left: 1.5rem;
+}
+
+.complianceIcons {
+    display: flex;
+    align-items: center;
+}
+
+.complianceIcons img {
+    margin-right: 1rem;
 }
 
 @page {
@@ -96,7 +109,64 @@ a {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen {
+    .contents a {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .contents a[aria-current="true"] {
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        margin-left: calc(10% + 15rem);
+        margin-right: 10%;
+    }
+
+    .contents {
+        position: fixed;
+        top: 0;
+        left: 1rem;
+        width: 15rem;
+        height: calc(100vh - 4rem);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        overflow: auto;
+    }
+
+    .hideWithSidebar {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        margin-left: calc(10% + 20rem);
+        margin-right: 10%;
+    }
+
+    .contents {
+        position: fixed;
+        top: 0;
+        left: 1rem;
+        width: 20rem;
+        height: calc(100vh - 4rem);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        overflow: auto;
+    }
+
+    .hideWithSidebar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 999px) {
     body {
         margin-left: 10%;
         margin-right: 10%;
