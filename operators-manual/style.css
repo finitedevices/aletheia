@@ -210,4 +210,14 @@ a {
     .contents a::after {
         content: " " leader(".") target-counter(attr(href), page);
     }
+
+    .col2 {
+        column-count: 2;
+        column-fill: balance;
+        column-gap: 2rem;
+    }
+
+    .col2 > p:first-child {
+        margin-top: 0;
+    }
 }
