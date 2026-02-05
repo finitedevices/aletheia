@@ -38,6 +38,8 @@ file(GLOB SOURCES
 add_link_options(
     -sEXPORTED_FUNCTIONS=_malloc,_free,_load_code
     -sEXPORTED_RUNTIME_METHODS=HEAPU8,cwrap
+    -sMODULARIZE=1
+    -sEXPORT_ES6=1
 )
 
 add_executable(aletheia ${SOURCES})

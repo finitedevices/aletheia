@@ -1,13 +1,19 @@
-var _loadCode = Module.cwrap("load_code", null, ["number", "number", "number", "number"]);
+import {Module} from "./script.js";
 
-function loadCode(id, array, offset) {
-    var buffer = Module._malloc(array.length);
+var loadCode = null;
 
-    Module.HEAPU8.set(array, buffer);
+export async function init() {
+    var _loadCode = Module.cwrap("load_code", null, ["number", "number", "number", "number"]);
 
-    _loadCode(id, buffer, offset, array.length);
+    loadCode = function(id, array, offset) {
+        var buffer = Module._malloc(array.length);
 
-    Module._free(buffer);
+        Module.HEAPU8.set(array, buffer);
+
+        _loadCode(id, buffer, offset, array.length);
+
+        Module._free(buffer);
+    };
 }
 
 export function parseAndLoadCode(id, text) {

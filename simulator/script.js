@@ -1,3 +1,4 @@
+import createModule from "./build/aletheia.js";
 import * as codeLoader from "./codeloader.js";
 
 const SYSTEM_DIPS = [
@@ -14,6 +15,14 @@ const LCD_PIXELS_PER_DOT = 3;
 
 var instances = [];
 var displayContexts = {};
+
+export var Module = await createModule({
+    locateFile: function(path) {
+        return "/simulator/build/aletheia.wasm";
+    }
+});
+
+await codeLoader.init();
 
 class Instance {
     constructor(id) {
@@ -195,7 +204,7 @@ function applyProperties(id) {
 window.renderLcdBitmap = function(id, buffer) {
     instances.find((instance) => instance.id == id)?.renderLcdBitmap(buffer);
 }
-    
+
 Module.setup();
 
 for (var i = 0; i < INSTANCES; i++) {
