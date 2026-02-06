@@ -56,6 +56,18 @@ function createIc(xU, y, zU, widthU, lengthU) {
     }
 }
 
+function createDipSwitches(xU, y, zU, positions) {
+    createBox(-xU * U, y - 4, (-zU * U) + HU, (positions + 1) * U, 6, 9);
+
+    for (var i = 0; i < positions; i++) {
+        createBox((-(xU + i) * U) - HU - QU, y - 10, (-zU * U) - HU, HU, EPSILON, U + HU);
+    }
+
+    for (var i = 0; i < positions; i++) {
+        createBox((-(xU + i) * U) - HU - QU, y - 10, (-zU * U) - U, HU, 0.5, U);
+    }
+}
+
 // Main board
 createBox(0, 0, 0, 93.98, 2, 127);
 
@@ -66,6 +78,10 @@ createIc(4, 2, 19, 16, 6);  // AS6C1008
 createIc(21, 2, 19, 7, 3);  // 74LS04
 createIc(29, 2, 19, 7, 3);  // 74LS08
 createIc(29, 2, 24, 7, 3);  // 74LS21
+
+createDipSwitches(0, 2, 27, 4);
+createDipSwitches(7, 2, 27, 8);
+createDipSwitches(18, 2, 27, 8);
 
 requestAnimationFrame(function render() {
     controls.update();
