@@ -9,7 +9,7 @@ cd simulator
 ./build.sh --install-dev
 ```
 
-The Aletheia simulator can be built and run by running the following in the `simulator` directory:
+Once the dependencies are installed, the Aletheia simulator can be built and run by running the following in the `simulator` directory:
 
 ```bash
 ./build.sh && python3 -m http.server
